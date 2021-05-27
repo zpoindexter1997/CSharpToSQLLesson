@@ -94,6 +94,19 @@ namespace CSharpToSqlLibrary
             return (rowsAffected == 1);
         }
 
+        //creating a method to fill all of our @parameters to prevent duplicate code
+        private void FillVendorFromParamters(SqlCommand cmd, Vendor vendor)
+        {
+            cmd.Parameters.AddWithValue("@code", vendor.Code);
+            cmd.Parameters.AddWithValue("@name", vendor.Name);
+            cmd.Parameters.AddWithValue("@address", vendor.Address);
+            cmd.Parameters.AddWithValue("@city", vendor.City);
+            cmd.Parameters.AddWithValue(@"state", vendor.State);
+            cmd.Parameters.AddWithValue("@zip", vendor.Zip);
+            cmd.Parameters.AddWithValue("@phone", vendor.Phone);
+            cmd.Parameters.AddWithValue("@email", vendor.Email);
+        }
+
         public bool Change(Vendor vendor)
         {
             var sql = "UPDATE Vendors set " +
@@ -108,14 +121,7 @@ namespace CSharpToSqlLibrary
                         "Where Id = @id;";
             var cmd = new SqlCommand(sql, VendorsController.connection.Sqlconn);
             cmd.Parameters.AddWithValue("@id", vendor.Id);
-            cmd.Parameters.AddWithValue("@code", vendor.Code);
-            cmd.Parameters.AddWithValue("@name", vendor.Name);
-            cmd.Parameters.AddWithValue("@address", vendor.Address);
-            cmd.Parameters.AddWithValue("@city", vendor.City);
-            cmd.Parameters.AddWithValue("@state", vendor.State);
-            cmd.Parameters.AddWithValue("@zip", vendor.Zip);
-            cmd.Parameters.AddWithValue("@phone", vendor.Phone);
-            cmd.Parameters.AddWithValue("@email", vendor.Email);
+            FillVendorFromParamters(cmd, vendor);
             var rowsAffected = cmd.ExecuteNonQuery();
             return (rowsAffected == 1);
         }
@@ -127,14 +133,7 @@ namespace CSharpToSqlLibrary
                         "VALUES " +
                         "(@code, @name, @address, @city, @state, @zip, @phone, @email);";
             var cmd = new SqlCommand(sql, VendorsController.connection.Sqlconn);
-            cmd.Parameters.AddWithValue("@code", vendor.Code);
-            cmd.Parameters.AddWithValue("@name", vendor.Name);
-            cmd.Parameters.AddWithValue("@address", vendor.Address);
-            cmd.Parameters.AddWithValue("@city", vendor.City);
-            cmd.Parameters.AddWithValue(@"state", vendor.State);
-            cmd.Parameters.AddWithValue("@zip", vendor.Zip);
-            cmd.Parameters.AddWithValue("@phone", vendor.Phone);
-            cmd.Parameters.AddWithValue("@email", vendor.Email);
+            FillVendorFromParamters(cmd, vendor);
             var rowsAffected = cmd.ExecuteNonQuery();
             return (rowsAffected == 1);
         }
