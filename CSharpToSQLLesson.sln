@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCSharpToSqlLibrary", "CSharpToSQLLesson\TestCSharpToSqlLibrary.csproj", "{8FF74FC9-B7E4-4B71-B2BA-62F0A935FA51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpToSqlLibrary", "SqlLibrary\CSharpToSqlLibrary.csproj", "{C419BD7D-2302-4E20-BE4E-95151F14F86E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FF74FC9-B7E4-4B71-B2BA-62F0A935FA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FF74FC9-B7E4-4B71-B2BA-62F0A935FA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FF74FC9-B7E4-4B71-B2BA-62F0A935FA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FF74FC9-B7E4-4B71-B2BA-62F0A935FA51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C419BD7D-2302-4E20-BE4E-95151F14F86E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C419BD7D-2302-4E20-BE4E-95151F14F86E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C419BD7D-2302-4E20-BE4E-95151F14F86E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C419BD7D-2302-4E20-BE4E-95151F14F86E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB4DF3BB-E8A6-45D7-B283-959DEF4B0A60}
+	EndGlobalSection
+EndGlobal
